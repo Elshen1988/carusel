@@ -1,0 +1,22 @@
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.right{
+position: relative;
+top: 100px;
+left: 5px;
+}
+.left{
+    position: relative;
+    top: 100px;
+    right: 740px;
+}
+.slaid{
+    width: 600px;
+}
+.hover:hover{
+cursor: pointer;
+
+}
