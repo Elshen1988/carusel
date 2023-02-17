@@ -1,43 +1,46 @@
-let box =document.querySelector(".box")
-let slaid=document.querySelector(".slaid")
-let righr =document.querySelector(".right")
-let left =document.querySelector(".left")
-let i=0
+let box = document.querySelector(".box")
+let slaid = document.querySelector(".slaid")
+let righr = document.querySelector(".right")
+let left = document.querySelector(".left")
+let i = 0
 
-let images =[]
+let images = []
 
-images[0]="./imges/1.avif";
-images[1]="./imges/2.avif";
-images[2]="./imges/3.avif";
-images[3]="./imges/4.avif";
-images[4]="./imges/5.avif";
-images[5]="./imges/6.jpg";
-images[6]="./imges/7.jpg";
-images[7]="./imges/8.jpg";
-
-
+images[0] = "./imges/1.avif";
+images[1] = "./imges/2.avif";
+images[2] = "./imges/3.avif";
+images[3] = "./imges/4.avif";
+images[4] = "./imges/5.avif";
+images[5] = "./imges/6.jpg";
+images[6] = "./imges/7.jpg";
+images[7] = "./imges/8.jpg";
 
 
-setInterval(()=>{
-righr.addEventListener("click",()=>{
-i++
-slaid.src=images[i]
-if(i > images.length-1){
-    i=0
-}
-})   
-left.addEventListener("click",()=>{
-    i--
-    slaid.src=images[i]
-    if(i < 0){
-        i=7
+
+
+setInterval(() => {
+
+    if (i <= images.length - 1) {
+        slaid.src = images[i]
+        i++
+    } else {
+        i = 0
     }
-    })   
-    if (i < images.length-1){
-    slaid.src=images[i]
+}, 1500)
+
+
+righr.addEventListener("click", () => {
+    slaid.src = images[i]
     i++
-    }else{
-        i=0  
+    if (i > images.length - 1) {
+        i = 0
     }
-    },3000)
+})
+left.addEventListener("click", () => {
+    slaid.src = images[i]
+    i--
+    if (i < 0) {
+        i = 7
+    }
+})
 
